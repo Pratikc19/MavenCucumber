@@ -12,13 +12,14 @@ import io.cucumber.java.en.When;
 
 public class LoginStepDef {
 	
-	private BaseUtility bu = new BaseUtility();
+	private BaseUtility bu ;
 	public static WebDriver driver;
 	private ConfigReader cr;
+	
 	@Given("User is on login page")
 	public void user_is_on_login_page() {
-	
 	cr = new ConfigReader();
+	bu = new BaseUtility();
 	driver = bu.startUp(cr.getTestData("url"),cr.getTestData("BroweserName"));
 	//String url, String BroweserName
 	}

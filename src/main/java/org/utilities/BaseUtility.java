@@ -134,5 +134,11 @@ public WebDriver startUp(String url, String BroweserName) {
 			    return false;
 			}
 		}
+		
+//For wait until Partialurl not contain in URL
+		public void waitForUrlContains(WebDriver driver, int time, String partialUrl) {
+			WebDriverWait wt = new WebDriverWait(driver, time);
+			wt.until(ExpectedConditions.urlContains(partialUrl));
+		}
 }
 

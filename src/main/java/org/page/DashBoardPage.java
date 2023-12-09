@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.utilities.BaseUtility;
 
 public class DashBoardPage {
   
@@ -33,6 +34,8 @@ public class DashBoardPage {
 	}
 	
 	public void verifyDashboardURL(String expURL) {
+		BaseUtility bu = new BaseUtility();
+		bu.waitForUrlContains(driver,15,"submit_tt.do");
 		String actURL = driver.getCurrentUrl();
 		Assert.assertEquals(expURL, actURL);
 	}
